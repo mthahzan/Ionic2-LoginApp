@@ -5,7 +5,7 @@ import { HomePageComponent } from './pages/home/home';
 
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  templateUrl: 'build/app.html'
 })
 export class MyAppComponent {
   rootPage: any = HomePageComponent;
