@@ -32,6 +32,7 @@
     "ionic-gulp-scripts-copy": "^2.0.0",
     "isparta": "^4.0.0",
     "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "^2.5.0",
     "karma": "0.13.22",
     "karma-browserify": "^5.0.5",
     "karma-chrome-launcher": "^1.0.1",
@@ -40,6 +41,7 @@
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.7",
+    "protractor": "^4.0.2",
     "run-sequence": "1.2.0",
     "traceur": "0.0.110",
     "ts-node": "^0.7.3",
@@ -67,6 +69,9 @@
   "scripts": {
     "karma": "gulp --gulpfile test/gulpfile.js --cwd ./ karma-debug",
     "postinstall": "typings install && cp test/karma-static/*.html node_modules/karma/static",
-    "test": "gulp --gulpfile test/gulpfile.js --cwd ./ unit-test"
+    "test": "gulp --gulpfile test/gulpfile.js --cwd ./ unit-test",
+    "e2e": "gulp --gulpfile test/gulpfile.ts --cwd ./ build-e2e && protractor test/protractor.conf.js",
+    "start": "ionic serve",
+    "webdriver-update": "webdriver-manager update"
   }
 }
