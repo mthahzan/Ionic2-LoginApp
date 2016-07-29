@@ -61,8 +61,6 @@ gulp.task('karma', (done: Function) => {
     singleRun: true,
   };
 
-  // Have to call the done() inside our own callback
-  // see http://stackoverflow.com/questions/26614738/issue-running-karma-task-from-gulp
   new karma.Server(karmaOpts, done).start();
 });
 

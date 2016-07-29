@@ -1,5 +1,3 @@
-// let browser: any;
-
 describe('MyApp', () => {
 
   beforeEach(() => {
