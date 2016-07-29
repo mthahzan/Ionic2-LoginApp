@@ -16,13 +16,14 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "browserify": "13.0.0",
     "browserify-istanbul": "^2.0.0",
     "codecov.io": "^0.1.6",
     "codelyzer": "0.0.26",
     "del": "2.2.0",
     "gulp": "3.9.1",
-    "gulp-tslint": "^6.0.2",
-    "gulp-typescript": "^2.13.6",
+    "gulp-tslint": "5.0.0",
+    "gulp-typescript": "2.13.4",
     "gulp-watch": "4.3.5",
     "ionic-gulp-browserify-typescript": "^1.1.0",
     "ionic-gulp-fonts-copy": "^1.0.0",
@@ -30,19 +31,21 @@
     "ionic-gulp-sass-build": "^1.0.0",
     "ionic-gulp-scripts-copy": "^2.0.0",
     "isparta": "^4.0.0",
-    "jasmine-core": "^2.4.1",
-    "karma": "^1.1.2",
-    "karma-browserify": "^5.1.0",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "^2.5.0",
+    "karma": "0.13.22",
+    "karma-browserify": "^5.0.5",
     "karma-chrome-launcher": "^1.0.1",
-    "karma-coverage": "^1.1.1",
+    "karma-coverage": "^1.0.01",
     "karma-jasmine": "^1.0.2",
-    "karma-mocha-reporter": "^2.0.4",
-    "karma-phantomjs-launcher": "^1.0.1",
-    "phantomjs-prebuilt": "^2.1.8",
-    "run-sequence": "^1.1.5",
-    "traceur": "0.0.111",
-    "ts-node": "^1.2.1",
-    "tsify": "^1.0.1",
+    "karma-mocha-reporter": "^2.0.3",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "protractor": "^4.0.2",
+    "run-sequence": "1.2.0",
+    "traceur": "0.0.110",
+    "ts-node": "^0.7.3",
+    "tsify": "^0.16.0",
     "tslint": "^3.14.0"
   },
   "cordovaPlugins": [
@@ -65,7 +68,10 @@
   "description": "LoginApp: An Ionic project",
   "scripts": {
     "karma": "gulp --gulpfile test/gulpfile.js --cwd ./ karma-debug",
-    "postinstall": "rm -rf typings && typings install && cp test/karma-static/*.html node_modules/karma/static",
-    "test": "gulp --gulpfile test/gulpfile.js --cwd ./ unit-test"
+    "postinstall": "typings install && cp test/karma-static/*.html node_modules/karma/static",
+    "test": "gulp --gulpfile test/gulpfile.js --cwd ./ unit-test",
+    "e2e": "gulp --gulpfile test/gulpfile.ts --cwd ./ build-e2e && protractor test/protractor.conf.js",
+    "start": "ionic serve",
+    "webdriver-update": "webdriver-manager update"
   }
 }
